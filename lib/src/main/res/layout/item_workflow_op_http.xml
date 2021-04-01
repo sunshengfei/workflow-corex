@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/formMargin"
+        android:layout_marginTop="@dimen/iconPadding"
+        android:layout_marginRight="@dimen/formMargin"
+        android:layout_marginBottom="@dimen/iconPadding"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="38dp"
+                android:padding="@dimen/tableCellSpacing">
+
+                <com.fuwafuwa.workflow.ui.ElipseImageView
+                    android:id="@+id/cmd_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                    android:background="@color/transparent"
+                    android:tint="@color/colorDiameterMiddle"
+                    app:corner_radius="6dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/send" />
+
+                <TextView
+                    android:id="@+id/cmd_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fieldSetMargin"
+                    android:layout_marginLeft="@dimen/fieldSetMargin"
+                    android:text="发送消息"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H5"
+                    app:layout_constraintBottom_toBottomOf="@+id/cmd_icon"
+                    app:layout_constraintLeft_toRightOf="@+id/cmd_icon"
+                    app:layout_constraintTop_toTopOf="@+id/cmd_icon" />
+
+                <TextView
+                    android:id="@+id/_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fieldSetMargin"
+                    android:layout_marginLeft="@dimen/fieldSetMargin"
+                    android:textColor="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H5"
+                    app:layout_constraintBottom_toBottomOf="@+id/cmd_type"
+                    app:layout_constraintLeft_toRightOf="@+id/cmd_type"
+                    app:layout_constraintTop_toTopOf="@+id/cmd_type"
+                    tools:text="090****4344" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/delete"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="@dimen/iconSpacing"
+                    android:src="@drawable/icon_clean"
+                    android:tint="@color/golden"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cmd_icon" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/holder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:corner_radius="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/delete"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:materialIcon="cursor_move"
+                    app:materialIconColor="@color/dividerColor" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="@dimen/textLineSpacing"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/delete"
+                    app:layout_constraintTop_toBottomOf="@+id/cmd_icon"
+                    tools:text="创建一条指令创建一条指令创建一条指令创建一条指令创建一条指令" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/expand_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_top_line"
+                android:drawableRight="@drawable/ic_collapse_more_black_24dp"
+                android:padding="@dimen/tableCellSpacing"
+                android:text="展开"
+                android:textColor="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3" />
+
+            <!--            region  整个主板 -->
+
+            <LinearLayout
+                android:id="@+id/panel_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_top_line"
+                        android:padding="@dimen/tableCellSpacing"
+                        android:text="方法"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/method"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_top_line"
+                        android:gravity="right"
+                        android:padding="@dimen/tableCellSpacing"
+                        android:text="GET"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/H3" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/expand_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_top_line"
+                    android:drawableRight="@drawable/ic_expand_more_black_24dp"
+                    android:padding="@dimen/tableCellSpacing"
+                    android:text="请求头"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:id="@+id/table_headers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,2">
+
+                </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/add_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_top_line"
+                    android:orientation="horizontal"
+                    android:paddingTop="1dp">
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:layout_width="46dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:scaleType="center"
+                        app:materialIcon="plus_circle"
+                        app:materialIconColor="@color/themeColor"
+                        app:materialIconSize="26dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_item_bg"
+                        android:padding="@dimen/tableCellSpacing"
+                        android:text="增加请求头"
+                        android:textColor="@color/defaultLightTextColor"
+                        android:textSize="@dimen/H3" />
+                </LinearLayout>
+
+
+                <!--               region body -->
+
+                <LinearLayout
+                    android:id="@+id/panel_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_top_line"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/tableCellSpacing">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="请求体"
+                            android:textColor="@color/defaultTextColor"
+                            android:textSize="@dimen/H3"
+                            android:textStyle="bold" />
+
+                        <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                            android:id="@+id/requestContentType"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/windowBackground"
+                            android:elevation="2dp"
+                            app:borderColor="@color/themeColor"
+                            app:borderWidth="1dp"
+                            app:divider="@color/dividerColor"
+                            app:dividerPadding="1dp"
+                            app:dividerWidth="1dp"
+                            app:position="0"
+                            app:radius="20dp"
+                            app:ripple="true"
+                            app:rippleColor="@color/dividerColor"
+                            app:selectedBackground="@color/themeColor">
+
+                            <com.addisonelliott.segmentedbutton.SegmentedButton
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:selectedTextColor="@color/windowBackground"
+                                app:text="Form"
+                                app:textColor="@color/defaultTextColor"
+                                app:textSize="@dimen/H5" />
+
+                            <com.addisonelliott.segmentedbutton.SegmentedButton
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:selectedTextColor="@color/windowBackground"
+                                app:text="JSON"
+                                app:textColor="@color/defaultTextColor"
+                                app:textSize="@dimen/H5" />
+
+                            <com.addisonelliott.segmentedbutton.SegmentedButton
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:selectedTextColor="@color/windowBackground"
+                                app:text="Raw"
+                                app:textColor="@color/defaultTextColor"
+                                app:textSize="@dimen/H5" />
+                        </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+                    </LinearLayout>
+
+                    <TableLayout
+                        android:id="@+id/table_form"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1,2">
+
+                    </TableLayout>
+
+                    <LinearLayout
+                        android:id="@+id/add_form"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_top_line"
+                        android:orientation="horizontal"
+                        android:paddingTop="1dp"
+                        android:showDividers="middle">
+
+                        <net.steamcrafted.materialiconlib.MaterialIconView
+                            android:layout_width="46dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            app:materialIcon="plus_circle"
+                            app:materialIconColor="@color/themeColor"
+                            app:materialIconSize="26dp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_item_bg"
+                            android:padding="@dimen/tableCellSpacing"
+                            android:text="增加键值对"
+                            android:textColor="@color/defaultLightTextColor"
+                            android:textSize="@dimen/H3" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/body_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:background="@drawable/background_top_line"
+                        android:gravity="start"
+                        android:hint="JSON请求体"
+                        android:maxLines="10"
+                        android:minLines="5"
+                        android:overScrollMode="always"
+                        android:padding="@dimen/tableCellSpacing"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/defaultHintTextColor"
+                        android:textColorHint="@color/defaultHintTextColor"
+                        android:textSize="@dimen/H5" />
+                </LinearLayout>
+                <!--            endregion-->
+            </LinearLayout>
+
+
+            <!--            endregion-->
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

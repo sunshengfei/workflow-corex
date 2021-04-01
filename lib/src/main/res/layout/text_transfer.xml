@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.PopupOverlay"
+        app:layout_behavior="com.sagocloud.ntworker.behavior.AppBarLayoutBehavior"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize"
+            android:foregroundTint="@color/defaultTextColor"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:menu="@menu/confirm_text"
+            app:navigationIcon="@drawable/undo"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="局域网同步"
+            app:titleTextAppearance="@style/AppTheme.PopupOverlay.Text"
+            app:titleTextColor="@color/defaultTextColor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/golden"
+        android:padding="@dimen/iconPadding"
+        android:textColor="@color/warnColor"
+        android:textSize="@dimen/H5"
+        tools:text="PC浏览器打开地址，开始远程编辑同步" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/preview_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:minLines="20"
+                android:padding="@dimen/iconPadding"
+                android:text=""
+                android:textColor="@color/defaultTextColor"
+                android:textSize="@dimen/H5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:padding="@dimen/iconPadding"
+                android:text="注意：目前不支持atob、btoa等函数"
+                android:textColor="@color/defaultHintTextColor"
+                android:textSize="@dimen/H5" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

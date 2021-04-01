@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <LinearLayout
+        android:id="@+id/qControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windowBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/formPadding"
+        android:paddingRight="@dimen/formPadding"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QoS："
+            android:textColor="@color/defaultTextColor"
+            android:textSize="@dimen/H3" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sub_mqtt_qos_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/fieldSetMargin"
+            android:dropDownWidth="80dp"
+            android:entries="@array/mqtt_qos" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动滚动："
+            android:textColor="@color/defaultTextColor"
+            android:textSize="@dimen/H3" />
+
+        <com.fuwafuwa.workflow.ui.SwitchButton
+            android:id="@+id/sub_tg_autoscroll"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/toggle_accent_black"
+            app:kswTextOff="关"
+            app:kswTextOn="开" />
+
+        <TextView
+            android:id="@+id/clear_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/iconPadding"
+            android:layout_marginRight="@dimen/iconPadding"
+            android:padding="@dimen/iconPadding"
+            android:text="清空消息"
+            android:textColor="@color/defaultLightTextColor"
+            android:textSize="@dimen/H5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/qControl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/formPadding">
+
+            <AutoCompleteTextView
+                android:id="@+id/sub_topic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/white_bg_border_gray_round_corner"
+                android:completionThreshold="1"
+                android:drawablePadding="8dp"
+                android:hint="这里输入话题"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/fieldSetMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sub_subscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginLeft="@dimen/iconPadding"
+                android:background="@drawable/selector_btn_bg"
+                android:text="订阅"
+                android:textColor="@color/defaultTextColor" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/iconPadding"
+            android:background="@drawable/background_bottom_line"
+            android:paddingLeft="@dimen/formPadding"
+            android:paddingRight="@dimen/formPadding"
+            android:paddingBottom="@dimen/iconPadding"
+            android:text="已订阅的话题显示在这里"
+            android:textColor="@color/defaultHintTextColor"
+            android:textSize="@dimen/H3" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipTopicGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/formPadding"
+            android:paddingRight="@dimen/formPadding" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/iconPadding"
+        android:background="@drawable/background_bottom_line"
+        android:paddingLeft="@dimen/formPadding"
+        android:paddingTop="@dimen/iconPadding"
+        android:paddingRight="@dimen/formPadding"
+        android:paddingBottom="@dimen/iconPadding"
+        android:text="接收到的消息显示在这里"
+        android:textColor="@color/defaultHintTextColor"
+        android:textSize="@dimen/H3"
+        app:layout_constraintTop_toBottomOf="@+id/control" />
+
+    <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+        android:id="@+id/subscribeMessages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/windowBackground"
+        android:fillViewport="true"
+        app:fastScrollPopupBgColor="@color/colorAccent"
+        app:fastScrollPopupTextColor="@android:color/primary_text_dark"
+        app:fastScrollThumbColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_sub" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

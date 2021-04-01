@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="actionMenuTextColor">@color/whiteTextColor</item>
+        <item name="android:actionMenuTextColor">@color/whiteTextColor</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay.Text" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:textSize">@dimen/H3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="colorPrimary">@color/whiteTextColor</item>
+        <item name="titleTextColor">@color/defaultTextColor</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay.TextLight" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:textSize">@dimen/H3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Editable" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">@color/themeColor</item>
+        <item name="colorControlActivated">@color/themeColor</item>
+        <item name="colorControlHighlight">@color/themeColor</item>
+        <item name="android:textColorHint">@color/defaultHintTextColor</item>
+    </style>
+
+</resources>

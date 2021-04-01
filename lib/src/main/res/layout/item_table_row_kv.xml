@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_top_line"
+    android:divider="@drawable/cube_divider"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+    <net.steamcrafted.materialiconlib.MaterialIconView
+        android:id="@+id/kv_remove"
+        android:layout_width="46dp"
+        android:layout_height="26dp"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        app:materialIcon="minus_circle"
+        app:materialIconColor="@color/tabColorSelected"
+        app:materialIconSize="26dp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/kv_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:hint="无"
+        android:padding="@dimen/tableCellSpacing"
+        android:textColorHint="@color/defaultHintTextColor"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="@dimen/H3" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/kv_val"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:hint="无"
+        android:padding="@dimen/tableCellSpacing"
+        android:textColorHint="@color/defaultHintTextColor"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="@dimen/H3" />
+</TableRow>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_title_info">提示</string>
+    <string name="info_text_loading">正在加载，请稍后&#8230;&#8230;&#8230;</string>
+    <!--    region-->
+    <string name="mqtt_already_sub_topics">已订阅话题</string>
+    <string name="mqtt_no_sub_topics">暂无订阅话题</string>
+    <string name="mqtt_cmd_holder">请输入--h查看帮助</string>
+
+    <string name="export_to_clipboard">导出到剪贴板</string>
+    <string name="load_template">加载模板</string>
+    <string name="mqtt_template_mosquitto">mosquito测试</string>
+    <string name="mqtt_template_cloudmqtt">CloudMQTT</string>
+    <string name="mqtt_template_alimqtt">阿里MQTT</string>
+    <string name="mqtt_template_baidumqtt">百度物接入</string>
+    <string name="mqtt_template_googlemqtt">谷歌MQTT</string>
+
+    <string name="modify_profile">修改连接</string>
+    <string name="placeholder_username">请输入用户名</string>
+    <string name="placeholder_pwd">请输入密码</string>
+    <string name="dialog_confirm">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="layers_request_error">请求错误</string>
+    <string name="layers_data_error">数据错误</string>
+    <string name="layers_empty">没有内容</string>
+    <string name="message_bulb_view_more">查看更多…</string>
+    <string name="send">发送</string>
+    <string name="import_success">导入成功</string>
+    <string name="menu_add">添加</string>
+    <string name="menu_save">保存</string>
+    <string name="unnamed">未命名</string>
+    <string name="mqtt_profile_name">连接名称</string>
+    <string name="mqtt_profile_name_hint">请为配置设置一个名称</string>
+    <string name="protocol">协议</string>
+    <string name="tls_ssl_enabled">开启SSL/TLS</string>
+    <string name="add_mqtt_connect_point">添加连接</string>
+    <string name="choice_default">自动</string>
+    <string name="user_name">用户名</string>
+    <string name="password">密码</string>
+    <string name="mqtt_profile_timeout_title">连接超时</string>
+    <string name="mqtt_second_unit">单位：秒</string>
+    <string name="mqtt_profile_heart_beat">存活心跳</string>
+    <string name="mqtt_profile_inflight">最大inflight</string>
+    <string name="mqtt_field_number">数值</string>
+    <string name="mqtt_profile_clearsession">清除Session</string>
+    <string name="mqtt_profile_auto_reconnect">断线自动重连</string>
+    <string name="mqtt_profile_version">MQTT版本</string>
+    <string name="mqtt_profile_auto_isretained">是否保留</string>
+    <string name="mqtt_profile_message_body">消息内容</string>
+    <string name="mqtt_profile_message_topic">Topic</string>
+    <string name="field_hint">请输入内容</string>
+    <string name="setting_view_title_setting">设置</string>
+    <string name="mqttserver_profile_segment_base">基础设置</string>
+    <string name="mqttserver_profile_segment_safety">安全设置</string>
+    <string name="mqttserver_profile_host">Host</string>
+    <string name="mqttserver_profile_port">Port</string>
+    <string name="mqttserver_profile_hint_1883port">端口默认为1883</string>
+    <string name="mqttserver_profile_wsport">Port(WS)</string>
+    <string name="mqttserver_profile_hint_wsport">端口默认为8080</string>
+    <string name="mqttserver_is_need_auth">是否开启认证</string>
+    <string name="mqttserver_username">用户名</string>
+    <string name="mqttserver_password">密码</string>
+    <string name="mqttserver_hint_password">请输入密码</string>
+    <string name="mqttserver_hint_username">请输入用户名</string>
+
+    <string name="mqtt_profile_wsport">WS 端口号</string>
+    <string name="mqtt_profile_tab_general">通用配置(General)</string>
+    <string name="mqtt_profile_tab_credentials">认证(Credentials)</string>
+    <string name="mqtt_profile_tab_ssl">SSL/TLS</string>
+    <string name="mqtt_profile_tab_lastwill">遗言(LWT)</string>
+    <string name="topic_hint">请输入Topic</string>
+    <string name="more_func_will">TLS/SSL证书功能即将支持，敬请期待</string>
+
+    <string name="mqtt_profile_broker_core">Broker实现</string>
+    <string name="mqtt_profile_connect_way">连接方式</string>
+    <string name="mqtt_profile_host">Broker 主机地址</string>
+    <string name="mqtt_profile_host_hint">MQTT委托中心地址</string>
+    <string name="mqtt_profile_port_hint">MQTT委托中心端口号</string>
+    <string name="mqtt_profile_port">Broker 端口号</string>
+    <string name="mqtt_profile_sslport">TCP SSL端口号</string>
+    <string name="mqtt_profile_sslport_hint">默认8883</string>
+    <string name="mqtt_profile_wsport_hint">默认8080</string>
+    <string name="mqtt_profile_wssport_hint">默认8081</string>
+    <string name="mqtt_profile_wssport">WS SSL端口号</string>
+    <string name="mqtt_profile_client_id">客户端ID</string>
+    <string name="mqtt_profile_client_id_gen">随机生成</string>
+    <string name="mqtt_profile_client_id_hint">客户端id，以区分唯一设备</string>
+    <!--    endregion-->
+</resources>

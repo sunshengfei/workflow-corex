@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Editable" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">@color/themeColor</item>
+        <item name="colorControlActivated">@color/themeColor</item>
+        <item name="colorControlHighlight">@color/themeColor</item>
+        <item name="android:colorControlNormal">@color/themeColor</item>
+        <item name="android:colorControlActivated">@color/themeColor</item>
+        <item name="android:colorControlHighlight">@color/themeColor</item>
+        <item name="android:textColorHint">@color/defaultHintTextColor</item>
+    </style>
+</resources>

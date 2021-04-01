@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_save_mqtt"
+        android:orderInCategory="100"
+        android:title="@string/menu_save"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_copy_mqtt"
+        android:orderInCategory="100"
+        android:title="@string/export_to_clipboard"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_template_mqtt"
+        android:orderInCategory="110"
+        android:title="@string/load_template"
+        app:showAsAction="never">
+        <menu>
+            <group android:menuCategory="system">
+                <item
+                    android:id="@+id/action_mqtt_template_mosquito"
+                    android:orderInCategory="120"
+                    android:title="@string/mqtt_template_mosquitto"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/action_mqtt_template_cloudmqtt"
+                    android:orderInCategory="120"
+                    android:title="@string/mqtt_template_cloudmqtt"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/action_mqtt_template_aliyun"
+                    android:orderInCategory="130"
+                    android:title="@string/mqtt_template_alimqtt"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/action_mqtt_template_baidu"
+                    android:orderInCategory="140"
+                    android:title="@string/mqtt_template_baidumqtt"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/action_mqtt_template_google"
+                    android:orderInCategory="150"
+                    android:title="@string/mqtt_template_googlemqtt"
+                    android:visible="false"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+</menu>

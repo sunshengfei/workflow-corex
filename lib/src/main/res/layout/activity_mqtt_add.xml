@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.PopupOverlay"
+        app:layout_behavior="com.sagocloud.ntworker.behavior.AppBarLayoutBehavior">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false"
+            app:toolbarId="@id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/actionBarSize">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/windowBackground"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/iconPadding"
+                        android:paddingLeft="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="基础设置"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H5" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/formMargin"
+                        android:layout_marginTop="@dimen/iconPadding"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:layout_marginBottom="@dimen/iconPadding"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/cardBackground"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_name"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <com.fuwafuwa.workflow.ui.ClearEditText
+                                    android:id="@+id/et_profile_name"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/transparent"
+                                    android:drawableRight="@drawable/search_clear_btn"
+                                    android:gravity="right"
+                                    android:hint="@string/mqtt_profile_name_hint"
+                                    android:singleLine="true"
+                                    android:text="@string/unnamed"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textColorHint="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="连接类型"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingLeft="@dimen/iconPadding"
+                                    android:text="MQTT Broker"
+                                    android:textColor="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_broker_core"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <TextView
+                                    android:id="@+id/tv_mqtt_core"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingLeft="@dimen/iconPadding"
+                                    android:text="Paho"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <net.steamcrafted.materialiconlib.MaterialIconView
+                                    android:id="@+id/icon_run"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/fieldSpacing"
+                                    android:scaleType="center"
+                                    app:materialIcon="arrow_right"
+                                    app:materialIconColor="@color/defaultTextColor"
+                                    app:materialIconSize="18dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_connect_way"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <TextView
+                                    android:id="@+id/tv_mqtt_protocol"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingLeft="@dimen/iconPadding"
+                                    android:text="TCP/SSL"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <net.steamcrafted.materialiconlib.MaterialIconView
+                                    android:id="@+id/icon_run_protocol"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/fieldSpacing"
+                                    android:scaleType="center"
+                                    app:materialIcon="arrow_right"
+                                    app:materialIconColor="@color/defaultTextColor"
+                                    app:materialIconSize="18dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/iconPadding"
+                        android:paddingLeft="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="Broker设置"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H5" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/formMargin"
+                        android:layout_marginTop="@dimen/iconPadding"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:layout_marginBottom="@dimen/iconPadding"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/cardBackground"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_host"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <com.fuwafuwa.workflow.ui.ClearEditText
+                                    android:id="@+id/et_broker_ip"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/transparent"
+                                    android:drawableRight="@drawable/search_clear_btn"
+                                    android:gravity="right"
+                                    android:hint="@string/mqtt_profile_host_hint"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textColorHint="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_port"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <com.fuwafuwa.workflow.ui.ClearEditText
+                                    android:id="@+id/et_broker_port"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/transparent"
+                                    android:drawableRight="@drawable/search_clear_btn"
+                                    android:gravity="right"
+                                    android:hint="@string/mqtt_profile_port_hint"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textColorHint="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_sslport"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <com.fuwafuwa.workflow.ui.ClearEditText
+                                    android:id="@+id/et_broker_sslport"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/transparent"
+                                    android:drawableRight="@drawable/search_clear_btn"
+                                    android:gravity="right"
+                                    android:hint="@string/mqtt_profile_sslport_hint"
+                                    android:singleLine="true"
+                                    android:text="8883"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textColorHint="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_wsport"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <com.fuwafuwa.workflow.ui.ClearEditText
+                                    android:id="@+id/et_broker_wsport"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/transparent"
+                                    android:drawableRight="@drawable/search_clear_btn"
+                                    android:gravity="right"
+                                    android:hint="@string/mqtt_profile_wsport_hint"
+                                    android:singleLine="true"
+                                    android:text="8080"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textColorHint="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_wssport"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <com.fuwafuwa.workflow.ui.ClearEditText
+                                    android:id="@+id/et_broker_wssport"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/transparent"
+                                    android:drawableRight="@drawable/search_clear_btn"
+                                    android:gravity="right"
+                                    android:hint="@string/mqtt_profile_wssport_hint"
+                                    android:singleLine="true"
+                                    android:text="8081"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textColorHint="@color/defaultHintTextColor"
+                                    android:textSize="@dimen/H3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_top_line"
+                                android:gravity="top|center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/formMargin"
+                                android:paddingRight="@dimen/formMargin"
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="@dimen/formMargin"
+                                    android:gravity="center_vertical"
+                                    android:paddingTop="@dimen/iconPadding"
+                                    android:paddingBottom="@dimen/iconPadding"
+                                    android:text="@string/mqtt_profile_client_id"
+                                    android:textColor="@color/defaultTextColor"
+                                    android:textSize="@dimen/H3" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_weight="1" />
+
+                                <Button
+                                    android:id="@+id/btn_client_id"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="fill_horizontal"
+                                    android:padding="0dp"
+                                    android:text="@string/mqtt_profile_client_id_gen"
+                                    android:textColor="@color/defaultTextColor" />
+
+                            </LinearLayout>
+
+                            <com.fuwafuwa.workflow.ui.ClearEditText
+                                android:id="@+id/et_client_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/formMargin"
+                                android:layout_marginRight="@dimen/formMargin"
+                                android:layout_marginBottom="@dimen/iconPadding"
+                                android:background="@color/transparent"
+                                android:drawableRight="@drawable/search_clear_btn"
+                                android:gravity="right"
+                                android:hint="@string/mqtt_profile_client_id_hint"
+                                android:paddingTop="@dimen/iconPadding"
+                                android:paddingBottom="@dimen/iconPadding"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/defaultTextColor"
+                                android:textColorHint="@color/defaultHintTextColor"
+                                android:textSize="@dimen/H3" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionBarSize"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:titleTextAppearance="@style/AppTheme.PopupOverlay.Text" app:titleTextColor="@color/defaultTextColor"  app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="@string/app_name" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/windowBackground"
+                app:tabIndicatorColor="@color/primaryTextColorOnLight"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/primaryTextColorOnLight"
+                app:tabTextColor="@color/defaultTextColor" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.fuwafuwa.workflow.ui.LayersFrameLayout
+        android:id="@+id/blockingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/actionBarSize"
+        android:visibility="gone" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

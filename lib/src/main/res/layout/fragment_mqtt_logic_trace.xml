@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <LinearLayout
+        android:id="@+id/qControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windowBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/formPadding"
+        android:paddingRight="@dimen/formPadding"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动滚动："
+            android:textColor="@color/defaultTextColor"
+            android:textSize="@dimen/H3" />
+
+        <com.fuwafuwa.workflow.ui.SwitchButton
+            android:id="@+id/sub_tg_autoscroll"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:textColor="@color/toggle_accent_black"
+            app:kswTextOff="关"
+            app:kswTextOn="开" />
+
+        <TextView
+            android:id="@+id/clear_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/iconPadding"
+            android:layout_marginRight="@dimen/iconPadding"
+            android:padding="@dimen/iconPadding"
+            android:text="清空"
+            android:textColor="@color/defaultLightTextColor"
+            android:textSize="@dimen/H5" />
+    </LinearLayout>
+
+    <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+        android:id="@+id/traceView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:fastScrollPopupBgColor="@color/colorAccent"
+        app:fastScrollPopupTextColor="@android:color/primary_text_dark"
+        app:fastScrollThumbColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qControl" />
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--            android:id="@+id/scrollView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:fillViewport="true"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/qControl">-->
+
+    <!--        <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--            <androidx.appcompat.widget.AppCompatTextView-->
+    <!--                    android:id="@+id/traceView"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:lineHeight="@dimen/H3"-->
+    <!--                    android:lineSpacingExtra="2dp"-->
+    <!--                    android:scrollbars="vertical"-->
+    <!--                    android:singleLine="false"-->
+    <!--                    android:textColor="@color/defaultTextColor"-->
+    <!--                    android:textIsSelectable="true"-->
+    <!--                    android:textSize="@dimen/H5"-->
+    <!--                    tools:targetApi="p"-->
+    <!--                    tools:text="@string/path_password_eye" />-->
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

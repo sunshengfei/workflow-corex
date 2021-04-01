@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/formMargin"
+            android:layout_marginTop="@dimen/iconPadding"
+            android:layout_marginRight="@dimen/formMargin"
+            android:layout_marginBottom="@dimen/iconPadding"
+            android:descendantFocusability="blocksDescendants"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="@dimen/textLineSpacing"
+                    android:padding="@dimen/tableCellSpacing"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:text="否则" />
+
+            <View
+                    android:id="@+id/flag"
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/title"
+                    android:layout_alignTop="@+id/title"
+                    android:layout_alignBottom="@+id/title"
+                    android:layout_gravity="start|center_vertical"
+                    android:background="@color/colorPrimary"
+                android:layout_alignStart="@+id/title" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

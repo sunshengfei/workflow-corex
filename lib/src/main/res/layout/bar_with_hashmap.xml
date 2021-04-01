@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.PopupOverlay"
+        app:layout_behavior="com.sagocloud.ntworker.behavior.AppBarLayoutBehavior"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:menu="@menu/save_text"
+            app:navigationIcon="@drawable/undo"
+            app:titleTextAppearance="@style/AppTheme.PopupOverlay.Text" app:titleTextColor="@color/defaultTextColor"  app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="选择Broker" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/panel_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/formMargin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_top_line"
+            android:orientation="horizontal"
+            android:padding="@dimen/tablePadding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="参数集合"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="@dimen/H3"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/table_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2">
+
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/add_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_top_line"
+            android:orientation="horizontal"
+            android:paddingTop="1dp"
+            android:showDividers="middle"
+            android:visibility="gone">
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                android:layout_width="46dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:scaleType="center"
+                app:materialIcon="plus_circle"
+                app:materialIconColor="@color/colorAccent"
+                app:materialIconSize="26dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_item_bg"
+                android:padding="@dimen/tableCellSpacing"
+                android:text="增加参数"
+                android:textColor="@color/defaultLightTextColor"
+                android:textSize="@dimen/H3" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/remark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/formMargin"
+        android:textColor="@color/defaultHintTextColor"
+        android:textSize="@dimen/H5"
+        tools:text="this is a long text,this is a long text,this is a long text,this is a long text,this is a long text,this is a long text," />
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.PopupOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:menu="@menu/save_text"
+            app:navigationIcon="@drawable/undo"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="选择Broker"
+            app:titleTextAppearance="@style/AppTheme.PopupOverlay.Text"
+            app:titleTextColor="@color/defaultTextColor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.fuwafuwa.workflow.ui.ClearEditText
+        android:id="@+id/edtext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/formMargin"
+        android:background="@drawable/white_bg_border_gray_round_corner"
+        android:drawableEnd="@drawable/icon_clean"
+        android:drawableRight="@drawable/icon_clean"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/fieldSetMargin"
+        android:text=""
+        android:textColor="@color/defaultTextColor"
+        android:textColorHint="@color/defaultHintTextColor"
+        android:textSize="@dimen/H3"
+        android:translationZ="1dp"
+        tools:targetApi="lollipop" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/formMargin"
+        android:layout_marginRight="@dimen/formMargin"
+        android:layout_marginBottom="@dimen/formMargin"
+        android:background="@drawable/white_bg_border_gray_round_corner"
+        android:gravity="top|start"
+        android:hint="输入发布内容"
+        android:maxLines="5"
+        android:minLines="2"
+        android:padding="@dimen/iconPadding"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:textColor="@color/defaultTextColor"
+        android:textColorHint="@color/defaultHintTextColor"
+        android:textSize="@dimen/H3"
+        android:translationZ="1dp"
+        tools:targetApi="lollipop"
+        tools:text="Indicates that the user entered date cannot be parsed because its format is wrong. The user should instead use the format after the colon. Includes a line break [CHAR_LIMIT=54]" />
+</LinearLayout>

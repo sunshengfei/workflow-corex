@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/menuPadding">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/formMargin"
+            android:layout_marginTop="@dimen/iconPadding"
+            android:layout_marginRight="@dimen/formMargin"
+            android:layout_marginBottom="@dimen/iconPadding"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/cardBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="QoS"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                        android:id="@+id/qos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/whiteHintTextColor"
+                        android:elevation="3dp"
+                        app:borderColor="@color/transparent"
+                        app:borderWidth="1dp"
+                        app:divider="@color/dividerColor"
+                        app:dividerPadding="1dp"
+                        app:dividerWidth="1dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:position="0"
+                        app:radius="2dp"
+                        app:ripple="true"
+                        app:rippleColor="@color/dividerColor"
+                        app:selectedBackground="@color/colorAccent">
+
+                        <com.addisonelliott.segmentedbutton.SegmentedButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/iconPadding"
+                            android:paddingTop="4dp"
+                            android:paddingRight="@dimen/iconPadding"
+                            android:paddingBottom="4dp"
+                            app:selectedTextColor="@color/defaultTextColor"
+                            app:text="0"
+                            app:textColor="@color/defaultTextColor"
+                            app:textSize="@dimen/H5" />
+
+                        <com.addisonelliott.segmentedbutton.SegmentedButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/iconPadding"
+                            android:paddingTop="4dp"
+                            android:paddingRight="@dimen/iconPadding"
+                            android:paddingBottom="4dp"
+                            app:selectedTextColor="@color/defaultTextColor"
+                            app:text="1"
+                            app:textColor="@color/defaultTextColor"
+                            app:textSize="@dimen/H5" />
+
+                        <com.addisonelliott.segmentedbutton.SegmentedButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/iconPadding"
+                            android:paddingTop="4dp"
+                            android:paddingRight="@dimen/iconPadding"
+                            android:paddingBottom="4dp"
+                            app:selectedTextColor="@color/defaultTextColor"
+                            app:text="2"
+                            app:textColor="@color/defaultTextColor"
+                            app:textSize="@dimen/H5" />
+
+
+                    </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:layout_weight="1"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="@string/mqtt_profile_auto_isretained"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/tg_isretained"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="@string/mqtt_profile_message_topic"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.fuwafuwa.workflow.ui.ClearEditText
+                        android:id="@+id/et_lwt_topic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:drawableRight="@drawable/search_clear_btn"
+                        android:gravity="right"
+                        android:hint="@string/topic_hint"
+                        android:singleLine="true"
+                        android:textColor="@color/defaultTextColor"
+                        android:textColorHint="@color/defaultHintTextColor"
+                        android:textSize="@dimen/H3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:gravity="center_vertical"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="@string/mqtt_profile_message_body"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.fuwafuwa.workflow.ui.ClearEditText
+                        android:id="@+id/et_lwt_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/iconPadding"
+                        android:layout_marginBottom="@dimen/iconPadding"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:drawableRight="@drawable/search_clear_btn"
+                        android:gravity="right"
+                        android:hint="@string/field_hint"
+                        android:textColor="@color/defaultTextColor"
+                        android:textColorHint="@color/defaultHintTextColor"
+                        android:textSize="@dimen/H3" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
+
+
+

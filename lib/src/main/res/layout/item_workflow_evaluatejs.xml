@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/formMargin"
+        android:layout_marginTop="@dimen/iconPadding"
+        android:layout_marginRight="@dimen/formMargin"
+        android:layout_marginBottom="@dimen/iconPadding"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/tableCellSpacing">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="68dp">
+
+            <com.fuwafuwa.workflow.ui.ElipseImageView
+                android:id="@+id/cmd_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/transparent"
+                android:tint="@color/colorDiameterMiddle"
+                app:corner_radius="6dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/send" />
+
+            <TextView
+                android:id="@+id/cmd_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fieldSetMargin"
+                android:layout_marginLeft="@dimen/fieldSetMargin"
+                android:text="发送消息"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="@dimen/H5"
+                app:layout_constraintBottom_toBottomOf="@+id/cmd_icon"
+                app:layout_constraintLeft_toRightOf="@+id/cmd_icon"
+                app:layout_constraintTop_toTopOf="@+id/cmd_icon" />
+
+            <TextView
+                android:id="@+id/_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fieldSetMargin"
+                android:layout_marginLeft="@dimen/fieldSetMargin"
+                android:textColor="@color/defaultHintTextColor"
+                android:textSize="@dimen/H5"
+                app:layout_constraintBottom_toBottomOf="@+id/cmd_type"
+                app:layout_constraintLeft_toRightOf="@+id/cmd_type"
+                app:layout_constraintTop_toTopOf="@+id/cmd_type"
+                tools:text="090****4344" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/delete"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:padding="@dimen/iconSpacing"
+                android:src="@drawable/icon_clean"
+                android:tint="@color/golden"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cmd_icon" />
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                android:id="@+id/holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:corner_radius="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/delete"
+                app:layout_constraintRight_toRightOf="parent"
+                app:materialIcon="cursor_move"
+                app:materialIconColor="@color/dividerColor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/textLineSpacing"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="@dimen/H2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/delete"
+                app:layout_constraintTop_toBottomOf="@+id/cmd_icon"
+                tools:text="创建一条指令aaaaaaaaaaaaaaaaa1212312312312312312312312312313创建一条指令创建一条指令创建一条指令创建一条指令" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/iconPadding"
+                android:background="@color/remark"
+                android:gravity="start"
+                android:hint="这里的js跟通用的js有少数表现不一致的情况，如：4**2不被支持，请使用'Math.pow(4,2)'；\n支持ES2015大部分语法；\n数字类型处理结果可能始终是浮点数"
+                android:lineSpacingExtra="@dimen/textLineSpacing"
+                android:maxLines="10"
+                android:minLines="1"
+                android:overScrollMode="always"
+                android:padding="@dimen/iconPadding"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/H5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                android:id="@+id/remote_edit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:corner_radius="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:materialIcon="pencil_box"
+                app:materialIconColor="@color/colorAccent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

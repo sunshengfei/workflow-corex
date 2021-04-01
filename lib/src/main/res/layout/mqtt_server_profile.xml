@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/iconPadding"
+        android:paddingLeft="@dimen/formMargin"
+        android:paddingTop="@dimen/iconPadding"
+        android:paddingBottom="@dimen/iconPadding"
+        android:text="@string/mqttserver_profile_segment_base"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="@dimen/H5" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/formMargin"
+        android:layout_marginTop="@dimen/iconPadding"
+        android:layout_marginRight="@dimen/formMargin"
+        android:layout_marginBottom="@dimen/iconPadding"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/formMargin"
+                android:paddingRight="@dimen/formMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/formMargin"
+                    android:paddingTop="@dimen/iconPadding"
+                    android:paddingBottom="@dimen/iconPadding"
+                    android:text="@string/mqttserver_profile_host"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3" />
+
+                <com.fuwafuwa.workflow.ui.ClearEditText
+                    android:id="@+id/et_broker_host"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/search_clear_btn"
+                    android:gravity="right"
+                    android:hint="默认为0.0.0.0"
+                    android:text="0.0.0.0"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/background_top_line"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/formMargin"
+                android:paddingRight="@dimen/formMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/formMargin"
+                    android:paddingTop="@dimen/iconPadding"
+                    android:paddingBottom="@dimen/iconPadding"
+                    android:text="@string/mqttserver_profile_port"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3" />
+
+                <com.fuwafuwa.workflow.ui.ClearEditText
+                    android:id="@+id/et_broker_port"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/search_clear_btn"
+                    android:gravity="right"
+                    android:hint="@string/mqttserver_profile_hint_1883port"
+                    android:inputType="number"
+                    android:text="1883"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/background_top_line"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/formMargin"
+                android:paddingRight="@dimen/formMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/formMargin"
+                    android:paddingTop="@dimen/iconPadding"
+                    android:paddingBottom="@dimen/iconPadding"
+                    android:text="@string/mqttserver_profile_wsport"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3" />
+
+                <com.fuwafuwa.workflow.ui.ClearEditText
+                    android:id="@+id/et_broker_ws_port"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/search_clear_btn"
+                    android:gravity="right"
+                    android:hint="@string/mqttserver_profile_hint_wsport"
+                    android:inputType="number"
+                    android:text="8080"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/formMargin"
+        android:paddingTop="@dimen/iconPadding"
+        android:paddingBottom="@dimen/iconPadding"
+        android:text="@string/mqttserver_profile_segment_safety"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="@dimen/H5" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/formMargin"
+        android:layout_marginTop="@dimen/iconPadding"
+        android:layout_marginRight="@dimen/formMargin"
+        android:layout_marginBottom="@dimen/iconPadding"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:layout_weight="1"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="SSL"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/is_ssl_used"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="Port(SSL)"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.fuwafuwa.workflow.ui.ClearEditText
+                        android:id="@+id/et_broker_sslport"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:drawableRight="@drawable/search_clear_btn"
+                        android:gravity="right"
+                        android:hint="端口默认为8883"
+                        android:inputType="number"
+                        android:text="8883"
+                        android:textColor="@color/defaultTextColor"
+                        android:textColorHint="@color/defaultHintTextColor"
+                        android:textSize="@dimen/H3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="SSL Port(WSS)"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.fuwafuwa.workflow.ui.ClearEditText
+                        android:id="@+id/et_broker_ws_sslport"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:drawableRight="@drawable/search_clear_btn"
+                        android:gravity="right"
+                        android:hint="端口默认为8883"
+                        android:inputType="number"
+                        android:text="8883"
+                        android:textColor="@color/defaultTextColor"
+                        android:textColorHint="@color/defaultHintTextColor"
+                        android:textSize="@dimen/H3" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/formMargin"
+                android:paddingRight="@dimen/formMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/formMargin"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/iconPadding"
+                    android:paddingBottom="@dimen/iconPadding"
+                    android:text="@string/mqttserver_is_need_auth"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/is_authed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/background_top_line"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/formMargin"
+                android:paddingRight="@dimen/formMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/formMargin"
+                    android:paddingTop="@dimen/iconPadding"
+                    android:paddingBottom="@dimen/iconPadding"
+                    android:text="@string/mqttserver_username"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3" />
+
+                <com.fuwafuwa.workflow.ui.ClearEditText
+                    android:id="@+id/et_auth_usrname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/search_clear_btn"
+                    android:gravity="right"
+                    android:hint="@string/mqttserver_hint_username"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/background_top_line"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/formMargin"
+                android:paddingRight="@dimen/formMargin"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/formMargin"
+                    android:paddingTop="@dimen/iconPadding"
+                    android:paddingBottom="@dimen/iconPadding"
+                    android:text="@string/mqttserver_password"
+                    android:textColor="@color/defaultTextColor"
+                    android:textSize="@dimen/H3" />
+
+                <com.fuwafuwa.workflow.ui.ClearEditText
+                    android:id="@+id/et_auth_pwd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/search_clear_btn"
+                    android:gravity="right"
+                    android:hint="@string/mqttserver_hint_password"
+                    android:inputType="textPassword"
+                    android:maxEms="32"
+                    android:minEms="6"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/menuPadding">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/formMargin"
+            android:layout_marginTop="@dimen/iconPadding"
+            android:layout_marginRight="@dimen/formMargin"
+            android:layout_marginBottom="@dimen/iconPadding"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/cardBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="@string/protocol"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/mqtt_tls_version_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:dropDownWidth="80dp"
+                        android:entries="@array/mqtt_tls_version"
+                        android:gravity="right" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/formMargin"
+                        android:layout_weight="1"
+                        android:paddingTop="@dimen/iconPadding"
+                        android:paddingBottom="@dimen/iconPadding"
+                        android:text="@string/tls_ssl_enabled"
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/tg_isssl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_top_line"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/formMargin"
+                    android:paddingRight="@dimen/formMargin"
+                    android:textColor="@color/defaultTextColor"
+                    android:textColorHint="@color/defaultHintTextColor"
+                    android:textSize="@dimen/H3"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="是否开启SSL/TLS："
+                        android:textColor="@color/defaultTextColor"
+                        android:textSize="@dimen/H3" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_cert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/cb_ca_server"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="CA签名服务端认证" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/formMargin"
+            android:layout_marginTop="@dimen/iconPadding"
+            android:layout_marginRight="@dimen/formMargin"
+            android:layout_marginBottom="@dimen/iconPadding"
+            android:text="@string/more_func_will"
+            android:textColor="@color/defaultHintTextColor"
+            android:textSize="@dimen/H5" />
+    </LinearLayout>
+</ScrollView>
+

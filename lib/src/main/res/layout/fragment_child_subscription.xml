@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/formPadding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mqtt_already_sub_topics"
+            android:textColor="@color/defaultHintTextColor"
+            android:textSize="@dimen/H5" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipTopicGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/formPadding" />
+
+        <com.fuwafuwa.workflow.ui.MaskLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:maskIcon="@drawable/flag_empty"
+            app:maskText="@string/mqtt_no_sub_topics" />
+    </LinearLayout>
+</ScrollView>
+

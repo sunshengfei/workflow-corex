@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="mqtt_tls_version">
+        <item>SSL</item>
+        <item>SSLv3</item>
+        <item>TLSv1</item>
+        <item>TLS</item>
+        <item>SSL_TLS</item>
+    </string-array>
+
+    <string-array name="mqtt_qos">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

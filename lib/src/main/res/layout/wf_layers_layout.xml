@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.fuwafuwa.workflow.ui.MaskLayout
+        android:id="@+id/empty_layout_neterror"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:maskIcon="@drawable/flag_linkerror"
+        app:maskText="@string/layers_request_error" />
+
+    <com.fuwafuwa.workflow.ui.MaskLayout
+        android:id="@+id/empty_layout_exception"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:maskIcon="@drawable/flag_sad"
+        app:maskText="@string/layers_data_error" />
+
+    <com.fuwafuwa.workflow.ui.MaskLoadingView
+        android:id="@+id/layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground" />
+
+    <com.fuwafuwa.workflow.ui.MaskLayout
+        android:id="@+id/empty_layout_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:maskIcon="@drawable/flag_empty"
+        app:maskText="@string/layers_empty" />
+
+
+</FrameLayout>

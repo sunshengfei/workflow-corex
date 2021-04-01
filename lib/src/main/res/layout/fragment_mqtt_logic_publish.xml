@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:id="@+id/qControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/formPadding"
+        android:paddingRight="@dimen/formPadding"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QoS："
+            android:textColor="@color/defaultTextColor"
+            android:textSize="@dimen/H3" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/pub_mqtt_qos_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/formPadding"
+            android:layout_marginRight="@dimen/formPadding"
+            android:dropDownWidth="80dp"
+            android:entries="@array/mqtt_qos" />
+
+        <com.fuwafuwa.workflow.ui.SwitchButton
+            android:id="@+id/pub_tg_isretained"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/toggle_accent_black"
+            app:kswTextOff="不保留"
+            app:kswTextOn="保留" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/formPadding"
+        app:layout_constraintTop_toBottomOf="@+id/qControl">
+
+        <AutoCompleteTextView
+            android:id="@+id/pub_topic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/white_bg_border_gray_round_corner"
+            android:completionThreshold="1"
+            android:drawablePadding="8dp"
+            android:hint="这里输入话题"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/fieldSetMargin"
+            android:textColor="@color/defaultTextColor"
+            android:textColorHint="@color/defaultHintTextColor"
+            android:textSize="@dimen/H5"
+            tools:text="输入话题" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pub_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginStart="@dimen/iconPadding"
+            android:layout_marginLeft="@dimen/iconPadding"
+            android:background="@drawable/selector_btn_bg"
+            android:text="发布"
+            android:textColor="@color/defaultTextColor" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/control">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/formPadding">
+
+            <EditText
+                android:id="@+id/et_pub_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_bg_border_gray_round_corner"
+                android:gravity="top"
+                android:hint="这里输入话题内容"
+                android:minLines="5"
+                android:padding="@dimen/fieldSetMargin"
+                android:paddingLeft="@dimen/textPadding"
+                android:paddingTop="@dimen/textPadding"
+                android:paddingRight="@dimen/textPadding"
+                android:paddingBottom="@dimen/textPadding"
+                android:textColor="@color/defaultTextColor"
+                android:textColorHint="@color/defaultHintTextColor"
+                android:textSize="@dimen/H3" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

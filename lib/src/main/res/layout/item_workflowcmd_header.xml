@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardBackground"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:paddingStart="@dimen/formMargin"
+        android:paddingLeft="@dimen/formMargin"
+        android:paddingTop="@dimen/fieldSetMargin"
+        android:paddingEnd="@dimen/formMargin"
+        android:paddingRight="@dimen/formMargin"
+        android:paddingBottom="@dimen/fieldSetMargin">
+
+        <TextView
+            android:id="@+id/workflow_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/icon_run"
+            android:hint="请设置工作流名称"
+            android:textColor="@color/defaultTextColor"
+            android:textColorHint="@color/defaultHintTextColor"
+            android:textSize="@dimen/H2"
+            android:textStyle="bold" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/icon_run"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/fieldSpacing"
+            android:layout_toLeftOf="@+id/icon_edit"
+            android:scaleType="center"
+            android:visibility="visible"
+            app:materialIcon="play_circle"
+            app:materialIconColor="@color/defaultTextColor"
+            app:materialIconSize="26dp" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/icon_edit"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/fieldSpacing"
+            android:scaleType="center"
+            android:visibility="visible"
+            app:materialIcon="pencil_circle"
+            app:materialIconColor="@color/defaultTextColor"
+            app:materialIconSize="26dp" />
+
+    </RelativeLayout>
+</LinearLayout>
